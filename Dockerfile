@@ -1,5 +1,5 @@
 FROM docker.io/ubuntu:20.04 as builder
-ARG version=2.19.1
+ARG version=2.19.2
 
 ADD https://github.com/prometheus/prometheus/releases/download/v${version}/prometheus-${version}.linux-amd64.tar.gz /tmp/prometheus-${version}.linux-amd64.tar.gz
 RUN mkdir /app /config /data && \
