@@ -12,5 +12,12 @@ Automatic build for distroless prometheus container
 
 ## Default CMD
 ```
-CMD ["/app/prometheus","--config.file=/config/prometheus.yml","--storage.tsdb.path=/data","--storage.tsdb.retention.time=7d"]
+CMD [ \
+     "/app/prometheus", \
+     "--config.file=/config/prometheus.yml", \
+     "--storage.tsdb.path=/data", \
+     "--storage.tsdb.retention.time=7d" \
+     "--web.console.libraries=/usr/share/prometheus/console_libraries", \
+     "--web.console.templates=/usr/share/prometheus/consoles" \
+     ]
 ```
