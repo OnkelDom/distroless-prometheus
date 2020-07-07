@@ -21,3 +21,12 @@ CMD [ \
      "--web.console.templates=/usr/share/prometheus/consoles" \
      ]
 ```
+
+## Automatic release check with cron
+```
+# Create two files:
+# .telegram_token with your token
+# .telegram_chatid with your chat id
+# Clone repo and exec hourly cronjob
+$ echo "@hourly /home/onkeldom/git-repos/distroless-prometheus/get_release.sh 2>&1 | logger -t build_prometheus" | sudo tee /etc/cron.d/build_prometheus
+```
