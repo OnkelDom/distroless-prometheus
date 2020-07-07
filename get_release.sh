@@ -14,9 +14,9 @@ if [ "$dockerfile_version" != "$current_release" ]; then
   sed -i "s/$dockerfile_version/$current_release/g" Dockerfile
   git add -A
   git commit -m "update to $current_release"
-  git push -f origin
+  git push origin
   git tag $current_release
-  git push -f origin $current_release
+  git push origin $current_release
   curl -X  POST "https://api.telegram.org/bot$telegram_token/sendMessage?chat_id=$telegram_chatid&text=$repo updated to $current_release"
 else
   echo "$REPO $dockerfile_version is up to date"
