@@ -33,7 +33,7 @@ CMD [ \
      "/app/prometheus", \
      "--config.file=/config/prometheus.yml", \
      "--storage.tsdb.path=/data", \
-     "--storage.tsdb.retention.time=7d" \
-     "--web.console.libraries=/usr/share/prometheus/console_libraries", \
-     "--web.console.templates=/usr/share/prometheus/consoles" \
+     "--storage.tsdb.retention.time=7d", \
+     "--web.console.libraries=/config/console_libraries", \
+     "--web.console.templates=/config/consoles" \
      ]
